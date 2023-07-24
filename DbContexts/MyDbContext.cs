@@ -8,7 +8,6 @@ namespace TestProduct.DbContexts
         public MyDbContext(DbContextOptions<MyDbContext> options) : base(options)
         {
         }
-
         public DbSet<UserModel> User { get; set; }
     }
 }

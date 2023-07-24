@@ -28,7 +28,5 @@ namespace TestProduct.Controllers.User
              _userRepository.CreateUser(userModel);
             return Ok();
         }
-
-
     }
 }

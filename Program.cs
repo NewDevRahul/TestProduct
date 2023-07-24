@@ -16,6 +16,7 @@ builder.Services.AddScoped<IUserRepository,UserRepository>();
 
 // Add services to the container.
 builder.Services.AddControllers();
+
 builder.Services.AddCors(options =>{
         options.AddPolicy(name: "AllowOrigin", builder =>{
                 builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod();
@@ -55,6 +56,8 @@ if (app.Environment.IsDevelopment())
         }
         await next();
     });
+
+    app.UseCors("AllowOrigin");
 }
 
 app.UseHttpsRedirection();
